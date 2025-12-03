@@ -24,11 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // Create remove button
         const removeBtn = document.createElement('button');
         removeBtn.textContent = "Remove";
-        removeBtn.className = 'remove-btn';
+        removeBtn.classList.add('remove-btn');
 
-        // When remove button is clicked → delete the task (remove the li from the list)
+        // When remove button is clicked → delete the task (remove the li from taskList)
         removeBtn.onclick = () => {
-            // Use li.remove() which directly removes the element from the DOM
             li.remove();
         };
 
@@ -40,10 +39,10 @@ document.addEventListener('DOMContentLoaded', () => {
         taskInput.value = "";
     }
 
-    // Add task on button click
+    // Add event listener to addButton that calls addTask when the button is clicked
     addButton.addEventListener('click', addTask);
 
-    // Add task when pressing Enter
+    // Add event listener to taskInput for the 'keypress' event to allow tasks to be added by pressing Enter
     taskInput.addEventListener('keypress', (event) => {
         if (event.key === 'Enter') {
             addTask();

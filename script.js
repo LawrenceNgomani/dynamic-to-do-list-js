@@ -50,6 +50,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // NOTE: Do NOT call addTask() here on page load (that triggers the empty-input check).
-    // If you want to load saved tasks from storage, call a different function here.
 });

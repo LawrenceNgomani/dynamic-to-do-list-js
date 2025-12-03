@@ -26,12 +26,13 @@ document.addEventListener('DOMContentLoaded', () => {
         removeBtn.textContent = "Remove";
         removeBtn.className = 'remove-btn';
 
-        // When remove button is clicked → delete the task
+        // When remove button is clicked → delete the task (remove the li from the list)
         removeBtn.onclick = () => {
-            taskList.removeChild(li);
+            // Use li.remove() which directly removes the element from the DOM
+            li.remove();
         };
 
-        // Add remove button inside li, then add li to the task list
+        // Append the remove button to the list item, then append the list item to the task list
         li.appendChild(removeBtn);
         taskList.appendChild(li);
 
@@ -49,6 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Invoke addTask on DOMContentLoaded (as required by instructions)
-    addTask();
+    // NOTE: Do NOT call addTask() here on page load (that triggers the empty-input check).
+    // If you want to load saved tasks from storage, call a different function here.
 });
